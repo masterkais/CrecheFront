@@ -1,0 +1,21 @@
+<br><br><br><br><br><br><br><br><br><br>
+<div class="container">
+    <h2 class="text-center mb-4">Votre Panier</h2>
+    <div *ngIf="panier.length > 0; else emptyPanier" class="list-group">
+        <div *ngFor="let repas of panier" class="list-group-item d-flex justify-content-between align-items-center">
+            <img [src]="repas.imageUrl" [alt]="repas.name" class="repas-thumbnail" />
+            <span class="repas-name">{{ repas.name }}</span>
+            <span class="badge badge-primary badge-pill">{{ repas.price | currency }}</span>
+            <button class="btn btn-danger btn-sm" (click)="retirerDuPanier(repas)">Retirer</button>
+        </div>
+    </div>
+    <ng-template #emptyPanier>
+        <p class="text-center">Votre panier est vide.</p>
+    </ng-template>
+    <div class="text-center mt-4">
+        <button class="btn btn-outline-secondary btn-lg" (click)="viderPanier()">Vider le Panier</button><br>
+        <button class="btn btn-outline-secondary btn-lg" (click)="genererFacture()">Générer la Facture</button>
+    </div>
+    <button class="btn btn-danger btn-sm" routerLink="/home1/repas2">Retour</button>
+
+</div>

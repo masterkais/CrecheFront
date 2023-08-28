@@ -1,0 +1,15 @@
+/* impression.css */
+
+/* Masquer certains éléments qui ne doivent pas apparaître dans la version imprimée */
+button {
+    display: none;
+  }
+  
+  /* Appliquer des styles spécifiques pour l'impression */
+  .facture {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 20px;
+  }
+  

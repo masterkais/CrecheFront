@@ -1,0 +1,54 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.repas-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.repas-item {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.repas-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.h2 {
+    color: white;
+}
+
+.header {
+    background-color: #92bfed;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header h2 {
+    color: #2d2d2e;
+}
+
+.header p {
+    color: #6c757d;
+}

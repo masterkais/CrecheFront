@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="header">
+                <h2 class="display-2 mb-1">Découvrez Nos Délicieux Repas</h2>
+            </div><br>
+            <input type="text" [(ngModel)]="recherche" placeholder="Rechercher un repas" class="form-control mb-3" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let repas of filtrerRepas()">
+            <div class="card h-100">
+                <img [src]="repas.imageUrl" [alt]="repas.name" class="card-img-top repas-image" />
+                <div class="card-body">
+                    <h3 class="card-title repas-name">{{ repas.name }}</h3>
+                    <p class="card-text repas-price">Prix : {{ repas.price | currency }}</p>
+                    <button class="btn btn-primary btn-block" (click)="ajouterAuPanier(repas)">Ajouter au
+                        Panier</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="d-flex align-items-center h-100">
+                <button routerLink="/home1/panier" class="btn btn-outline-secondary btn-lg">Voir le Panier</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showSuccessMessage" class="alert alert-success text-center mt-3">
+        Repas ajouté au panier avec succès !
+    </div>
+</div>

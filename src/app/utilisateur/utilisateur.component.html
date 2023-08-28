@@ -1,0 +1,79 @@
+<div class="container my-5">
+    <div class="user-list">
+        <h2 class="text-center mb-4">Liste des Utilisateurs</h2>
+        <div class="mb-3">
+            <button class="btn btn-primary" (click)="openAddModal()">Ajouter Utilisateur</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Adresse</th>
+                        <th>Ville</th>
+                        <th>Téléphone</th>
+                        <th>Fax</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let utilisateur of utilisateurs" class="cursor-pointer">
+                        <td>{{ utilisateur.idutilisateur }}</td>
+                        <td>{{ utilisateur.nom }}</td>
+                        <td>{{ utilisateur.prenom }}</td>
+                        <td>{{ utilisateur.adresse }}</td>
+                        <td>{{ utilisateur.ville }}</td>
+                        <td>{{ utilisateur.telephone }}</td>
+                        <td>{{ utilisateur.fax }}</td>
+                        <td>{{ utilisateur.couriel }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-info" (click)="openEditModal(utilisateur)">Éditer</button>
+                            <button class="btn btn-sm btn-danger ml-2"
+                                (click)="openDeleteModal(utilisateur)">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modale d'ajout -->
+<div class="modal fade" #addModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ajouter un utilisateur</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" class="form-control" id="nom" [(ngModel)]="newUser.nom">
+                    </div>
+                    <!-- Add other form fields here -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-primary" (click)="addUser()">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modale d'édition -->
+<div class="modal fade" #editModal tabindex="-1" role="dialog">
+    <!-- Existing edit modal content -->
+</div>
+
+<!-- Modale de confirmation de suppression -->
+<div class="modal fade" #deleteModal tabindex="-1" role="dialog">
+    <!-- Existing delete modal content -->
+</div>

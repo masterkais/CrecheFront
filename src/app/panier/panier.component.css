@@ -1,0 +1,32 @@
+.container {
+    max-width: 600px;
+    /* Ajustez la largeur maximale selon vos besoins */
+    margin: 0 auto;
+    /* Centrez le conteneur horizontalement */
+    padding: 20px;
+    /* Ajoutez un espacement intérieur pour plus d'aération */
+}
+
+.list-group {
+    max-height: 400px;
+    /* Ajustez la hauteur maximale selon vos besoins */
+    overflow-y: auto;
+    /* Ajoutez une barre de défilement si nécessaire */
+}
+
+.repas-thumbnail {
+    max-width: 60px;
+    /* Ajustez la taille maximale des miniatures de repas */
+    height: auto;
+}
+
+/* Styles pour la facture */
+pre {
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Ajoutez d'autres styles personnalisés si nécessaire */
