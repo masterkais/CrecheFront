@@ -1,0 +1,46 @@
+<div mat-dialog-title>
+    <h2>Suivi Form</h2>
+</div> 
+<form [formGroup]="SuiviForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Enfant</mat-label>
+                <mat-select formControlName="nomenfant">
+                    <mat-option *ngFor="let val of nomenfant" [value]="val">{{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+   
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="pointageArrive">
+                <mat-label><b>Pointage Arrivée</b></mat-label>
+                <mat-radio-button value="8h">8h</mat-radio-button>
+                <mat-radio-button value="10h">10h</mat-radio-button>
+    
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="pointageDepart">
+                <mat-label><b>Pointage Sortie</b></mat-label>
+                <mat-radio-button value="13h">13h</mat-radio-button>
+                <mat-radio-button value="17h">17h</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Repas</mat-label>
+                <mat-select formControlName="repas">
+                    <mat-option *ngFor="let val of repas" [value]="val">{{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update':'Save'}}</button>
+    </div>
+</form>
+

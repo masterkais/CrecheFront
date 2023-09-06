@@ -1,0 +1,38 @@
+<div mat-dialog-title>
+    <h2>Message Form</h2>
+</div> 
+<form [formGroup]="FileForm" (ngSubmit)="onFormSubmit()" >
+    <div mat-dialog-content class="content">
+        
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Message</mat-label>
+                <input matInput placeholder="Ecrire un message..."formControlName="message_contenu">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <select class="form-select form-select-lg mb-3" aria-label="Large select example" (change)="onSelectUser($event)">
+                <option selected disabled>Choisissez</option>
+                <option *ngFor="let user of users" [value]="user">{{ user.nom }} {{ user.prenom }}</option>
+            </select>
+        </div>
+    
+        <div *ngIf="selectedUser">
+            
+            <p>{{ selectedUser.nom }} {{ selectedUser.prenom }}</p>
+        </div>
+        <ng-container matColumnDef="selectedUser">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ut</th>
+            <td mat-cell *matCellDef="let row"> {{row.selectedUser}} </td>
+          </ng-container>
+          <ng-container matColumnDef="message_contenu">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> msg</th>
+            <td mat-cell *matCellDef="let row"> {{row.message_contenu}} </td>
+          </ng-container>
+
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update':'Envoyer'}}</button>
+    </div>
+</form>
