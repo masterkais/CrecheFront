@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Enfant</th>
+      <th scope="col">Type d'abonnement</th>
+      <th scope="col">Date de début</th>
+      <th scope="col">Date de fin</th>
+      <th scope="col">Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="formData">
+      <td>{{ formData.enfant.nom }} {{ formData.enfant.prenom }}</td>
+      <td>{{ formData.abonnement }}</td>
+      <td>{{ formData.dateDebut }}</td>
+      <td>{{ formData.dateFin }}</td>
+      <td>99$</td>
+    </tr>
+  </tbody>
+</table>

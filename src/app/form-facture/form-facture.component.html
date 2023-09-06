@@ -1,0 +1,83 @@
+
+<div class="g-sidenav-show">
+  
+  
+  <div>
+    
+    
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="d-flex align-items-center">
+                <p class="mb-0">Remplir vos cordonnées</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="text-uppercase text-sm">Information de l'enfant</p>
+              <div class="row">  
+            </div>
+             
+              <div>
+                <select class="form-select form-select-lg mb-3" aria-label="Large select example" (change)="onSelectEnfant($event)"[ngModel]="selectedEnfant">
+                 <option>Choisissez un enfant</option> 
+                  <option *ngFor="let enfant of enfants" [value]="enfant">{{ enfant.idenfant }} {{ enfant.nom }} {{ enfant.prenom }}</option>
+                </select>
+              </div>
+              <hr class="horizontal dark">
+                <p class="text-uppercase text-sm">Type d'abonnement</p>
+                <select class="form-select form-select-lg mb-3" aria-label="Large select example" [(ngModel)]="selectedType">
+                  <option value="1">ANNUELLE</option>
+                  <option value="2">MENSUELLE</option>
+                  <option value="3">TRIMESTRIELLE</option>
+                  
+                </select>
+              
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Date debut</label>
+                  <input class="form-control" type="date" value="jj/mm/aaaa" [(ngModel)]="dateDebut">
+                </div>
+              </div><div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Date fin</label>
+                  <input class="form-control" type="date" value="jj/mm/aaaa" [(ngModel)]="dateFin">
+                </div>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-profile">
+            <img src="assets/inscr.jpg" alt="Image placeholder" class="card-img-top">
+            
+            <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
+              <div class="text-center mt-4">
+                <div class="h1 font-weight-300">
+                    <i class="ni location_pin mr-2"></i> Annuelle
+                  </div>
+                <div class="h2 font-weight-300">
+                  <i class="ni location_pin mr-2"></i> $99
+                </div>
+                <hr class="horizontal dark">
+
+                <div class="d-flex justify-content-center">
+                  <p-button label="Passer au paiement" styleClass="p-button-rounded p-button-success" (click)="onPasserAuPaiement()" routerLink="/home1/payement"></p-button>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  
+  
+</div>
